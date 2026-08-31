@@ -1,0 +1,29 @@
+title: Hippocampal Subfields Group
+description: >-
+  A worldwide collaboration building consensus on how hippocampal subfields
+  are anatomically delineated on MRI, and sharing that protocol openly with
+  the field.
+email: hippocampalsubfieldsgroup@gmail.com
+
+# --- IMPORTANT ---
+# While the site lives at yourname.github.io/REPO-NAME, baseurl must be
+# "/REPO-NAME" (with the leading slash, no trailing slash) so links and
+# assets resolve correctly. Once you move to the custom domain
+# hippocampalsubfields.com, set this back to "" (empty).
+baseurl: "/hsg-site"
+url: ""
+
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+
+social:
+  bluesky: https://bsky.app/profile/hipposubfields.bsky.social
+  youtube: https://www.youtube.com/channel/UCxsJ99l9sJ3guwiUNyfCudg
+  email_list: https://groups.google.com/forum/#!forum/subfield_harmonization
+  email: hippocampalsubfieldsgroup@gmail.com
+
+exclude:
+  - README.md
