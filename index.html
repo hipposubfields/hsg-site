@@ -1,43 +1,66 @@
 ---
 layout: default
-title: Working Groups
+title: Home
 ---
-<div class="page-header wrap">
-  <h1>Working Groups</h1>
-</div>
-<article class="prose wrap">
-  <h3>The working groups of HSG</h3>
-  <p>The HSG consists of multiple collaborative working groups dedicated to developing a comprehensive segmentation protocol for the hippocampus and MTL cortex. As a reference point for our proposed rules, we use histological annotations by leading experts on MTL anatomy. The proposed rules also undergo a collective evaluation by the broader community, enabling feedback and iterative refinement, if necessary. Our objective throughout this process is to foster effective communication and active engagement with the wider community. Additionally, we strive to facilitate accessibility to valuable resources that can aid individuals interested in MTL segmentation.</p>
 
-  <h3>Active working groups</h3>
-  <div class="group-block">
-    <h4><a href="{{ '/people/working-groups/histology-group/' | relative_url }}">Histology Working Group</a></h4>
-    <p>Aims to provide anatomical validity for the harmonized protocol through providing histological reference materials to our Boundary Working Groups.</p>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">A worldwide neuroimaging consortium</div>
+      <h1>Bringing consensus to how the hippocampus is mapped.</h1>
+      <p>Hippocampal subfields are complex in both structure and function. For over a decade, the HSG has worked with the neuroimaging community toward a harmonized protocol for segmenting them on MRI — now extending to the surrounding MTL cortex.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ '/harmonized-protocol/' | relative_url }}">Learn about the protocol</a>
+        <a class="btn btn-ghost" href="{{ '/people/' | relative_url }}">Join the community</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Hippocampal Subfields Group logo">
+    </div>
   </div>
-  <div class="group-block">
-    <h4><a href="{{ '/people/working-groups/boundary-working-group/' | relative_url }}">Boundary Working Groups</a></h4>
-    <p>Aims to develop a protocol for establishing subfield boundaries based on known anatomy. The group consists of several active smaller working groups targeting specific issues: a <strong>Head Group</strong> (inner and outer boundaries of the hippocampal head), a <strong>Tail Group</strong> (outer boundaries of the hippocampal tail), and an <strong>MTL cortex group</strong> (entorhinal, BA35 &amp; BA36, and parahippocampal cortex).</p>
-  </div>
-  <div class="group-block">
-    <h4><a href="{{ '/people/working-groups/questionnaire-working-group/' | relative_url }}">Questionnaire Working Group</a></h4>
-    <p>Aims to develop and compile data that seeks to better understand current practices in HS segmentation and to assess agreement on the developed segmentation rules.</p>
-  </div>
-  <div class="group-block">
-    <h4><a href="{{ '/people/working-groups/communication-group/' | relative_url }}">Communication Working Group</a></h4>
-    <p>Aims to actively work with reach-out about the efforts of the hippocampal subfields group, bringing both news-related content and pedagogical content for members of the community.</p>
-  </div>
+</header>
 
-  <h3>Completed working groups</h3>
-  <div class="group-block">
-    <h4><a href="{{ '/people/working-groups/acquisition-working-group/' | relative_url }}">Acquisition Working Group</a></h4>
-    <p>Developed and established recommendations for MRI acquisition protocols that are optimal for hippocampal subfield segmentation.</p>
+<section class="section">
+  <div class="wrap">
+    <div class="cards">
+      <div class="card">
+        <div class="idx">People</div>
+        <h3>Steering committee &amp; working groups</h3>
+        <p>Meet the advisory council and the groups leading segmentation, histology, and acquisition work — and see how the community's 200+ members take part.</p>
+        <a class="go" href="{{ '/people/' | relative_url }}">Meet the group</a>
+      </div>
+      <div class="card">
+        <div class="idx">Protocol</div>
+        <h3>Where the protocol stands</h3>
+        <p>The hippocampal body protocol is finished and published; work on the remaining regions continues. See current status, with links to the full materials.</p>
+        <a class="go" href="{{ '/harmonized-protocol/' | relative_url }}">See protocol status</a>
+      </div>
+      <div class="card">
+        <div class="idx">Get involved</div>
+        <h3>Workshops &amp; symposiums</h3>
+        <p>Past and upcoming opportunities to learn the protocol hands-on or join a symposium — including the next training session.</p>
+        <a class="go" href="{{ '/hsg-conference/' | relative_url }}">See upcoming events</a>
+      </div>
+      <div class="card">
+        <div class="idx">Resources</div>
+        <h3>Webinars, podcasts &amp; more</h3>
+        <p>Recorded webinars, podcast episodes, publications, and other materials shared by the community.</p>
+        <a class="go" href="{{ '/resources/' | relative_url }}">Browse resources</a>
+      </div>
+    </div>
   </div>
-  <div class="group-block">
-    <h4><a href="{{ '/people/working-groups/boundary-working-group/' | relative_url }}">Boundary Working Group: Hippocampal body</a></h4>
-    <p>Recently finished the final assessments of the harmonized protocol for the hippocampal body.</p>
-  </div>
+</section>
 
-  <h3>Recruitment</h3>
-  <p>Currently there are no working groups actively recruiting. However, if you are interested in participating in our efforts at some point, feel free to reach out and we will consider you for future recruitments &mdash; things we&rsquo;d like to know about include your current research interests, experience with the HSG community, what you could add as part of a potential working group, and what sort of working group interests you.</p>
-  <div class="note-box">The original site collects this through an embedded WordPress form. GitHub Pages has no backend to receive form submissions &mdash; a simple fix later is a mailto link or a free form service like Formspree or Google Forms embedded here instead.</div>
-</article>
+<section class="section posts-wrap">
+  <div class="wrap">
+    <div class="section-head"><h2>Recent updates</h2></div>
+    {% for post in site.posts limit:5 %}
+    <div class="post-row">
+      <div class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
+      <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+    </div>
+    {% else %}
+    <p style="color:var(--text-soft);padding:20px 0;">Posts you add to <code>_posts/</code> will show up here automatically.</p>
+    {% endfor %}
+  </div>
+</section>
