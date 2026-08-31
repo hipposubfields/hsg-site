@@ -1,0 +1,39 @@
+---
+layout: default
+title: Acquisition Working Group
+---
+<div class="page-header wrap">
+  <h1>Acquisition Working Group</h1>
+</div>
+<article class="prose wrap">
+  <h3>Aims</h3>
+  <p>The work performed by this working group has been completed. There were two basic aims. The first aim was to establish recommendations or guidelines for what MRI scans are most useful for delineating the hippocampal subfields. This included recommendations as to what degree of segmentation is reasonable for a given set of image data. The second aim was to provide a basic description and links to detailed descriptions of both manual and automatic segmentation protocols along with identifying the labs whose work typifies each approach.</p>
+
+  <h3>Current Acquisition Protocols</h3>
+  <p>There are a number of protocols currently in use in the field that are capable of gathering high enough quality images to support varying levels of segmentation of hippocampal subfields. The table below lists representative samples of protocols. Note, these are MRI acquisition protocols, not segmentation protocols. It is not meant to be exhaustive, but rather to represent the state of various approaches. For example, many labs use variants on the &ldquo;high resolution in-plane thick-slab T2 (HRIPS)&rdquo; protocol developed initially by both Zeineh 2000 and Mueller 2008. These use a T2-weighted fast spin echo sequence to collect oblique coronal images that have high in-plane resolution but relatively coarse through-plane resolution (e.g., 0.4 x 0.4 x 2 mm). When aligned to the principal axis of the hippocampus, the lack of isotropic voxels is not a problem for basic segmentation into subfields as the shape changes along the long axis are far slower than along the other axes.</p>
+
+  <table>
+    <thead><tr><th>Name</th><th>DOI</th><th>Resolution</th><th>Type</th><th>Magnet</th></tr></thead>
+    <tbody>
+      <tr><td>ADNI 3</td><td><a href="http://adni.loni.usc.edu/methods/documents/mri-protocols">Protocol</a></td><td>0.39 x 0.39 x 2.0</td><td>T2 TSE/FSE</td><td>3T (various)</td></tr>
+      <tr><td>Berron 2017</td><td>doi: 10.1016/j.nicl.2017.05.022</td><td>0.4 x 0.4 x 1.0</td><td>T2 TSE</td><td>7T</td></tr>
+      <tr><td>Bonnici 2012</td><td>doi: 10.3389/fnhum.2012.00290</td><td>0.5 iso</td><td>T2 TSE</td><td>3T Siemens Tim Trio</td></tr>
+      <tr><td>Kerchner 2012</td><td>doi: 10.1016/j.neuroimage.2012.06.048</td><td>0.16 x 0.16 x 1.5</td><td>T2 FSE</td><td>7T GE Signa HDx</td></tr>
+      <tr><td>Mueller 2008</td><td>doi: 10.1016/j.neuroimage.2008.04.174</td><td>0.4 x 0.4 x 2</td><td>T2 FSE</td><td>4T Siemens</td></tr>
+      <tr><td>Winterburn 2013</td><td>doi: 10.1016/j.neuroimage.2013.02.003</td><td>0.6&rarr;0.3 iso</td><td>T1 FSPGR-BRAVO &amp; T2 FSE-CUBE</td><td>3T GE</td></tr>
+      <tr><td>Wisse 2012</td><td>doi:10.1016/j.neuroimage.2012.03.023</td><td>0.7 iso</td><td>T2 TSE</td><td>7T Philips</td></tr>
+      <tr><td>Zeineh 2000</td><td>doi: 10.1006/nimg.2000.0561</td><td>0.39 x 0.39 x 3.0</td><td>T2 FSE</td><td>3T GE</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">The sample-image comparisons (Mueller 2008, Winterburn 2013, Wisse 2012, Kerchner 2012, Ekstrom 2009) are still hosted on the old WordPress media library &mdash; re-upload them into <code>assets/images/</code> and add them back in here whenever convenient.</div>
+
+  <h3>Recommendations</h3>
+  <p>The most straightforward way to acquire images suitable for subfield segmentation is to adapt the HRIPS approach in the Zeineh 2000 / Mueller 2008 protocol above. This basic approach is widely used and available/adaptable to any scan system in use. It is often extended or improved upon (e.g., Ekstrom et al., 2009, NeuroImage, uses a 0.5 x 0.5 x 1.2 mm variant on a 3T Siemens) as well.</p>
+  <p>The scans are high-resolution in-plane, T2-weighted, fast spin echo (FSE) or turbo spin echo (TSE) protocols (depending on your scanner) and you can often use something that ships with your scanner. In adapting any existing protocol, there are two key features: 1) Resolution in-plane should be 0.2&ndash;0.5 mm and resolution through-plane should be 1&ndash;2.5 mm. When running at 3T, 0.4 x 0.4 x 2mm is a reasonable goal and 0.5 x 0.5 x 2.5 mm will suffice for basic subfield segmentation. When running at 7T, pixel size in each dimension can be cut in half. 2) Slices must be oblique coronal and well-aligned to both the left and right hippocampus&rsquo; long axis. Typically, only enough slices are collected to cover the hippocampus in its entirety. For other purposes, a 1 mm isotropic or higher resolution T1 image would be acquired (e.g., an MPRAGE).</p>
+  <p>This basic scan can be used for a wide range of both manual and automatic segmentations and is the most popular choice. All else being equal (in-plane resolution, contrast-to-noise, &hellip;) the isotropic scans may offer advantages. While it is true that along the long axis of the hippocampus the rate of change is far less than in the other dimensions, there are certainly edges in the long axis that will be blurred by these thick-slice protocols. Isotropic voxels are also far easier to use during image registration as rotating thick slabs is not accurate. A disadvantage is that you will typically lose some resolution and signal-to-noise in-plane, and what aspect of this trade-off is chosen is up to the user.</p>
+  <p>If using an isotropic sequence, 0.7 mm native resolution should be considered a minimum requirement. At this resolution, especially when 2x oversampled after acquisition, it is sufficient to resolve subfield features that are lost at 1 mm resolution due to spatial undersampling. As with the thick-slab protocols, T2-weighted spin echo (FSE or TSE) highlights the contrast inside the hippocampus far better than T1-weighted images.</p>
+
+  <h3>Contributors</h3>
+  <p>Craig Stark, Arne Ekstrom, Mallar Chakravarty, Marie Chupin, Zach Reagh</p>
+</article>

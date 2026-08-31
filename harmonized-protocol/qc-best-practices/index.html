@@ -1,0 +1,109 @@
+---
+layout: default
+title: QC Best Practices
+---
+<div class="page-header wrap">
+  <h1>QC Best Practices</h1>
+</div>
+<article class="prose wrap">
+  <h3>The need for QC of hippocampus imaging</h3>
+  <p>To advance hippocampal research, reliable and valid imaging techniques are essential. Historically, clear guidelines for quality control (QC) in segmentation of hippocampal subfields have long been nonexistent in the literature. Recently, the Hippocampal Subfields Group (HSG) addressed this gap by publishing a report (available <a href="https://doi.org/10.1002/hbm.70004">here</a>) which gathered insights from 37 researchers across 10 countries on best practices for QC in hippocampal imaging.</p>
+  <p>Survey respondents were also asked to indicate how important they believe QC to be, where all respondents acknowledged the importance of QC. Despite this, only 46% reported detailing their QC procedures in prior publications, highlighting a mismatch between felt importance of QC and subsequent reporting of steps that were taken to verify sufficient image standards.</p>
+  <p>We believe consistent application of boundary definitions is fundamental for reliable hippocampal measurements. Inconsistent QC practices can obscure real differences between groups, particularly in populations where MRI scans tend to be lower quality due to specific clinical or age-related characteristics that impact MRI acquisition. For a lengthier discussion, we refer to the paper, but below summarize key take-home messages about the impact of QC and best practices discussed in the paper. The guide provides practical steps at each stage, starting from data acquisition to final publication. To note, these guidelines are designed specifically for hippocampal subfield measurements derived from high-resolution, oblique coronal T2-weighted scans that are approximately orthogonal to the hippocampus, scans which we believe are prerequisite for segmentation at the level of subfields.</p>
+
+  <h3>QC of Hippocampal Subfield Segmentation &ndash; Overview</h3>
+  <p>The table below summarizes the recommended best practices, starting from assessment of overall image quality to final screening, including recommendations on what to report in the final publication.</p>
+  <figure>
+    <img src="https://i0.wp.com/hippocampalsubfields.com/wp-content/uploads/2024/11/Table.png?fit=1463%2C958&amp;ssl=1" alt="Table of QC best-practice recommendations">
+  </figure>
+
+  <h3>Each QC step in more detail</h3>
+
+  <h4>QC at acquisition</h4>
+  <p>Acquisition is the first critical step for ensuring high-quality data. MRI scans are susceptible to several artifacts during acquisition, caused by factors such as participant movement, metal implants, magnetic field inhomogeneities related to head anatomy, and occasional mechanical issues in gradient coils. Whether by adjusting acquisition parameters or by initially reviewing the sequence output, it&rsquo;s essential to confirm that the data meet the conditions necessary for accurate hippocampal boundary tracing.</p>
+  <p>In our view, high-resolution T2-weighted images are a prerequisite for hippocampal subfield data, where we recommended a maximum resolution in coronal view of 0.5 x 0.5 mm and a maximum slice thickness of 2.5 mm. Detailed acquisition guidelines are available from our <a href="{{ '/people/working-groups/acquisition-working-group/' | relative_url }}">Acquisition Working Group</a> and have been discussed in a previous publication by the community.</p>
+  <p>To mitigate potential data loss resulting from artifacts, especially common when acquiring data on special populations such as young children or individuals with late-stage dementia, it is recommended to plan for the additional time to acquire repeated scans whenever feasible. Additionally, if possible, initial reviewing of image quality during acquisition can help determine whether further scans are needed.</p>
+
+  <h4>Image quality and landmark visibility</h4>
+  <p>There are two main considerations when checking the quality of images &ndash; judging <strong>overall image quality</strong> and checking <strong>landmark visibility</strong>. Although integrally linked and often checked in tandem, each is discussed in turn below.</p>
+
+  <h4>Image quality</h4>
+  <p>MRI images are prone to several artifacts, and these get increasingly common in special populations. Artifacts not only affect the quality of the data, but when located in the temporal lobes likely has an impact on the quality of your segmentations. Deciding on a minimum quality for inclusion is an important consideration to be decided before analysis commences.</p>
+  <p>The most common artifacts to look out for are <em>banding</em>, <em>ringing</em> and <em>motion</em> artifacts. <strong>Banding</strong> artifacts are caused by inhomogeneities in the magnetic field and cause dark bands covering portions of the image. <strong>Ringing</strong> artifacts are a reconstruction error that causes rings of alternating dark and bright in the image. <strong>Motion</strong> artifacts are caused by movement during scanning, resulting in ghost imaging overlays or diffuse and noisy imaging broadly. The majority of survey respondents highlighted motion artifacts as the most common cause of exclusion.</p>
+
+  <h4>Rating image quality</h4>
+  <p>It is common, and recommended, to calculate and report a combination of image signal-to-noise ratio (<em>SNR</em>) and contrast-to-noise ratio (<em>CNR</em>) to give an overall indication of image quality. <strong>SNR</strong> is the mean signal of a region of interest compared to background noise (often the standard deviation of samples in air). <strong>CNR</strong> is the comparison of mean signal in a region of interest to a reference region in proportion to background noise, where again it is common to use the standard deviation of background noise.</p>
+  <p>Qualitative review of image artifacts is recommended to complement the quantitative SNR/CNR approach &mdash; systematically categorizing images according to defined operational criteria about severity of different image artifacts.</p>
+  <p>These are subjective judgements but should be quantified using reliability estimates from one or several independent raters (e.g., kappa statistics between- or within-rater; minimum 0.75 indicates a strong level of agreement). The exact rating scale varies but typically follows a binary pass/fail format or a multilevel ordinal scale that allows classifying borderline cases in need of further investigation.</p>
+  <p>Finally, some automatic QC methods exist, first and foremost useful in larger datasets where manual QC would be infeasible. MRIQC (Ding et al., 2019) is one such option.</p>
+
+  <h4>Landmark visibility</h4>
+  <p>Overall image quality is a good indication of potential issues with visibility. However, for accurate hippocampal subfield segmentation, the most important point is that specific landmarks (e.g., uncus, alveus, SRLM, fimbria) are visible. Both manual tracers and automated algorithms can tolerate some moderate to heavy artifacts on individual slices, but segmentation quality will decrease as artifacts cover a larger portion of slices.</p>
+  <p>Similar to image quality checking, rating scales should be applied to landmark visibility as well &mdash; for example &ldquo;Pass/Clearly Visible,&rdquo; &ldquo;Check/Somewhat Visible,&rdquo; or &ldquo;Fail/Not Visible,&rdquo; allowing one to determine whether exclusions are necessary.</p>
+  <p>Key landmarks used across commonly used protocols include:</p>
+
+  <h4>Inferior and Superior Colliculi</h4>
+  <p>These structures, also known as the lamina quadrigemina, mark the boundary between the hippocampal body and tail in many protocols, including the HSG protocol. Due to their size, they are rarely obscured by artifacts, but it remains essential to verify their visibility.</p>
+
+  <h4>Stratum Radiatum Lacunosum Moleculare (SRLM)</h4>
+  <p>The SRLM is a C-shaped white matter layer appearing as a dark band within the hippocampus on coronal T2 imaging, serving as a critical landmark for subfield segmentation by defining the boundaries between the dentate gyrus and surrounding subfields.</p>
+  <p>Reduced SRLM visibility on individual slices can sometimes be compensated by inferring its position from adjacent slices. However, this method is limited when SRLM is obscured across multiple consecutive slices, especially with large slice thickness that causes significant morphological changes between slices, hindering inference.</p>
+
+  <h4>Fimbria and Alveus</h4>
+  <p>The fimbria and alveus are interconnected white matter structures bordering the hippocampus. In T2-weighted scans, they appear as dark bands that form the medial and superior boundaries of the hippocampus. These structures are often affected by partial voluming with nearby gray matter and CSF, resulting in poor visibility. However, reliable superior and medial border placement requires them to be at least partially visible across slices, similar to SRLM.</p>
+
+  <h4>Uncus</h4>
+  <p>The uncus has variability in exact placement and is surrounded by a combination of tissue types, making it prone to partial voluming effects that obscure it. This is less common than visibility issues for SRLM or fimbria/alveus, but is necessary in the HSG protocol and many others for identifying the transition between hippocampal head and body.</p>
+
+  <h3>Segmentation Error Identification</h3>
+  <p>Quality control (QC) for both automated and manual segmentations requires a thorough understanding of the relevant anatomy and the specific atlas or protocol used to define hippocampal subfield boundaries. In manual segmentation, researchers are responsible for accurately tracing subfield boundaries, with ongoing review both during and after the segmentation process. In contrast, automated segmentation relies entirely on <em>post hoc</em> inspection of the output to ensure quality.</p>
+  <p>The most commonly identified segmentation errors from our survey were:</p>
+  <ul>
+    <li>Inclusion of the choroid plexus or cerebrospinal fluid</li>
+    <li>Overestimation due to partial volume effects</li>
+    <li>Voxels incorrectly extending into the fimbria</li>
+    <li>Isolated groups of segmented pixels disconnected from the hippocampus</li>
+    <li>Misplaced internal boundaries</li>
+    <li>Underestimation of subfield labels</li>
+  </ul>
+
+  <h4>Rating segmentation errors</h4>
+  <p>Segmentation results are never perfect. Similar to the QC of image quality and landmark visibility, a useful approach is to apply a severity rating system for errors, with the goal of identifying cases that pose significant threats to validity. It is advisable to have multiple independent raters assess segmentation errors and to calculate inter- or intra-rater reliability to ensure consistency in error identification.</p>
+  <p>For large datasets (e.g., the Alzheimer&rsquo;s Disease Neuroimaging Initiative), conducting full QC of all segmentations may be impractical. In such cases, a random sampling approach can be used to provide a general indication of data quality.</p>
+  <p>With some automatic software, snapshots of segmented slices are extracted by default that can be used in QC procedures. For example, ASHS (Automatic Segmentation of Hippocampal Subfields; Yushkevich et al., 2015) automatically generates mosaic screenshots consisting of excerpt coronal and sagittal slices, allowing a quick check for potential errors followed by a more thorough slice-by-slice review for cases with identified errors.</p>
+  <p>Manual evaluation of segmentation quality is subjective, and thus requires standardized methods to ensure consistent decisions.</p>
+
+  <h3>Resegmentation of MR Images</h3>
+  <p>When selecting a segmentation atlas, ensure it has been validated in samples similar to the dataset being processed. Automated segmentation methods are typically validated against manual segmentations of specific samples, but their performance can vary with new datasets. Poor segmentation quality may indicate an unsuitable atlas.</p>
+  <p>Even with a suitable atlas, errors can occur. Automated resegmentation using a different atlas often improves data retention and reduces manual corrections. If this is not feasible or unsuccessful, adjust software-specific parameters and resegment using the original atlas.</p>
+  <p>We recommend considering resegmentation if errors are present in over 40% of the dataset, if severe errors affect more than 40% of slices, and if errors correlate systematically with a key variable. After resegmentation, repeat QC to assess error severity and determine the need for manual correction or data exclusion.</p>
+
+  <h3>Manual Correction of Automated Segmentation</h3>
+  <p>Given rater expertise and available time, manual correction can address errors in hippocampal subfield segmentation. Selective correction of severe issues, such as obvious mislabels, allows for resolving significant errors while maintaining the efficiency of automated segmentation in large datasets. Severity ratings from prior QC steps should guide these interventions, and corrections must align with the atlas used to ensure consistency, requiring raters to have atlas-specific expertise.</p>
+  <p>Over-correction should be avoided to preserve the uniformity inherent to automated segmentation, as manual edits can introduce variability and bias. To minimize human error, establish inter- or intra-rater reliability before correcting the full dataset, focusing on volume measures (ICC &gt; .85) and spatial overlap (DSC &gt; .70).</p>
+  <p>Maintaining external validity requires retaining as many cases as possible. However, segmentation errors that cannot be resolved through resegmentation or manual correction may necessitate excluding cases where errors compromise measurement validity.</p>
+  <p>Most survey respondents reported excluding severe errors while retaining small or moderate ones. QC often varies by subregion or hemisphere, allowing selective exclusion &mdash; for example the left hemisphere might be excluded while retaining the right, or anterior segments kept while posterior ones are excluded.</p>
+  <p>Exclusions reduce statistical power, so decisions about parameter estimation should consider the planned statistical method, the extent and randomness of missing data, and ensuring data loss is unrelated to key demographic or study variables. Formal tests, such as Little&rsquo;s chi-square, can assess whether data are missing at random, though severe cases often fail QC, making the assumption of randomness difficult to meet. A general guideline is to limit data loss from QC to no more than 40%.</p>
+
+  <h3>Data Screening</h3>
+  <p>Statistical data screening before hypothesis testing ensures the accuracy of data, verifies compliance with statistical assumptions, and supports best practices. A common first step is to inspect univariate descriptive statistics &mdash; checking for out-of-range values, ensuring plausible means and standard deviations, and identifying potential outliers. Investigators can also examine interhemispheric correlations of regional measures, expecting high consistency in most populations.</p>
+  <p>Outliers are a key focus of QC. They can be identified using z-scores exceeding |3.29|, flagged, and reviewed during analysis. Decisions to remove outliers should account for relevant factors, such as severe neurodegeneration, that may explain the deviation.</p>
+
+  <h3>What to report</h3>
+  <h4>Image quality</h4>
+  <p>We recommend reporting the approach taken to assessing image quality, including the criteria used for exclusion (binary or multilevel rating scale) as well as statistics for rater reliability among those reviewing the images, along with the number of scans excluded and any correlated covariates.</p>
+
+  <h4>Segmentation quality</h4>
+  <p>We recommend clearly describing in the methods section how segmentation labels were reviewed for errors. For manual segmentation, report whether segmentations were independently reviewed and rater reliability (intra-class correlation / kappa statistics). For automatic segmentations, report the approach taken to reviewing segmentation quality, including number of reviewers, their inter-reliability, and specific criteria applied.</p>
+
+  <h4>Segmentation correction and resegmentation</h4>
+  <p>If segmentation correction is applied, report agreement between raters performing the corrections (volume measures with ICC &gt; .85, spatial overlap with DSC &gt; .70), and the number or proportion of cases corrected. When resegmentation is applied, report how many cases were resegmented and any new parameters or atlases used.</p>
+
+  <h4>Data exclusion</h4>
+  <p>Report the number or percentage of data excluded, the number of raters and procedure used, and inter-/intra-rater reliability estimates. Report any covariates or variables of interest that coincide with data exclusion, along with a Little&rsquo;s chi-squared test for assessment of missingness.</p>
+
+  <h4>Data screening</h4>
+  <p>Report univariate outlier detection, and, where relevant, a multivariate outlier approach (e.g., Mahalanobis distance). We also recommend demonstrating high correlation between hemispheres (unless specific attributes of the studied population preclude this) and, for longitudinal data, consistency within hemisphere (ICC3, DSC) over time.</p>
+
+  <div class="note-box">Figures for this page (the summary table and landmark-visibility examples) are still hosted on the old WordPress media library and are hotlinked here for now &mdash; move them into <code>assets/images/</code> whenever you re-upload the group's resources.</div>
+</article>

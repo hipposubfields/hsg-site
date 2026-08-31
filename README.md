@@ -3,6 +3,39 @@
 A Jekyll site, ready for GitHub Pages. No custom domain or DNS needed to get
 this live — GitHub gives you a working `github.io` URL automatically.
 
+## Status: content migration
+
+Every top-level page and section is now filled in with the real content
+from the WordPress site:
+
+- Home, About, Harmonized Protocol (+ Body Protocol, QC Best Practices,
+  Training Opportunities), People (+ Advisory Council, Working Groups
+  landing, all 5 working-group pages, Members), HSG Conferences (full
+  19-meeting archive), and Other Resources.
+- The last 7 blog posts (October 2025 through July 2026) are in `_posts/`,
+  full text, and show up automatically in "Recent updates" on the homepage.
+
+**Not yet migrated:** roughly 20 older blog posts, spanning August 2018
+through October 2024. Ask to have these brought over next, page by page,
+the same way the rest of this was done.
+
+## About the resource links
+
+Images, PDFs, and other downloadable files (protocol figures, meeting
+photos, newsletters, whitepapers) are still linked to their original
+locations on the WordPress media library (`hippocampalsubfields.com/
+wp-content/uploads/...`). These links work for now, but depend on the old
+site staying up. Wherever you see a `<div class="note-box">` on a page,
+that's a flag for a specific file worth re-uploading into `assets/images/`
+or `assets/files/` and re-linking — you can search the project for
+`note-box` to find all of them at once.
+
+Two things that need a non-GitHub-Pages solution when you get to them:
+- The interest-form on the Working Groups page (currently a WordPress
+  form plugin) — needs a service like Formspree or a Google Form embed.
+- Anything gated behind NITRC login (the sample MRI dataset) — already
+  just links out, no change needed.
+
 ## What's here
 
 - `_config.yml` — site title, description, social links, and `baseurl`
@@ -10,22 +43,13 @@ this live — GitHub gives you a working `github.io` URL automatically.
 - `_layouts/default.html` — the shared nav, footer, and light/dark toggle
   every page uses.
 - `index.html` — the homepage.
-- `about/`, `harmonized-protocol/`, `people/`, `hsg-conference/`,
-  `resources/` — one stub page per top-level nav item, each with placeholder
-  copy marked `<em>Replace this...</em>` — swap in the real content whenever
-  you're ready, the layout and styling are already wired up.
-- `_posts/` — two sample posts, showing how the blog pipeline works. Add a
-  new Markdown or HTML file here (`YYYY-MM-DD-title.md`) for each new post,
-  and it'll automatically show up in "Recent updates" on the homepage,
-  newest five.
-- `assets/` — the real logo, the stylesheet (all colors as CSS variables, so
-  the light/dark palette lives in one place at the top of `style.css`), and
-  the toggle's JS.
-
-Sub-pages you had in the original nav (Advisory Council, Working Groups,
-Body Protocol, QC Best Practices, Training Opportunities, Global
-Membership) aren't built yet — the five top-level pages above are stubs
-ready for you or me to fill in and split out next.
+- `about/`, `harmonized-protocol/` (+ 3 sub-pages), `people/` (+ 6
+  sub-pages), `hsg-conference/`, `resources/` — full content pages.
+- `_posts/` — 7 real posts. Add a new Markdown or HTML file here
+  (`YYYY-MM-DD-title.md`) for each new post going forward, and it'll
+  automatically show up in "Recent updates" on the homepage, newest five.
+- `assets/` — the real logo, the stylesheet (all colors as CSS variables
+  at the top of `style.css`), and the toggle's JS.
 
 ## Before you push: one setting to check
 
@@ -36,18 +60,10 @@ baseurl: "/hsg-site"
 ```
 
 This must exactly match your repo's name, with a leading slash and no
-trailing slash — GitHub Pages serves project repos at
-`https://<username>.github.io/<repo-name>/`, and Jekyll needs to know that
-prefix to link pages and assets correctly. If you name the repo something
-other than `hsg-site`, update this line to match before pushing.
-
-(Exception: if you create the repo as `<username>.github.io` itself, it
-becomes your root site instead of a project page — in that case set
-`baseurl: ""`.)
+trailing slash. If you named the repo `hsg-site`, no change needed.
 
 When you later move to `hippocampalsubfields.com`, set `baseurl: ""` and
-add a `CNAME` file (see below) — happy to walk through that step when
-you're ready.
+add a `CNAME` file — happy to walk through that step when you're ready.
 
 ## Push it
 
@@ -55,7 +71,7 @@ you're ready.
 cd hsg-site        # or whatever you named the folder
 git init
 git add .
-git commit -m "Initial site draft"
+git commit -m "Full content migration"
 git branch -M main
 git remote add origin https://github.com/<username>/<repo-name>.git
 git push -u origin main
@@ -66,6 +82,9 @@ branch → `main` / `(root)`**. GitHub builds Jekyll sites automatically — no
 local Ruby install needed. Give it a minute or two, then your site is live
 at `https://<username>.github.io/<repo-name>/`.
 
+(If you're updating an existing repo rather than starting fresh, skip
+`git init`/`remote add` and just commit + push the changed files instead.)
+
 ## Custom domain, when you're ready
 
 1. Add a file named `CNAME` (no extension) to the repo root containing just
@@ -73,8 +92,6 @@ at `https://<username>.github.io/<repo-name>/`.
 2. In your DNS provider, add a CNAME record pointing the domain (or the
    `www` subdomain) at `<username>.github.io`.
 3. Set `baseurl: ""` in `_config.yml`.
-
-No rush on this — the `github.io` URL works fine for drafting.
 
 ## Local preview (optional)
 

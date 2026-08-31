@@ -95,6 +95,36 @@ nav{background:var(--nav);border-bottom:1px solid var(--footer-line);}
 .prose h2{font-size:22px;margin-top:36px;margin-bottom:12px;}
 .prose p{font-size:16px;color:var(--text-soft);margin:0 0 16px;}
 .prose a{color:var(--accent);}
+.prose h3{font-size:18px;margin-top:28px;margin-bottom:8px;}
+.prose h4{font-size:16px;margin-top:24px;margin-bottom:8px;}
+.prose ul,.prose ol{color:var(--text-soft);font-size:16px;padding-left:22px;margin:0 0 16px;}
+.prose li{margin-bottom:6px;}
+.prose img{border-radius:2px;margin:16px 0;}
+.prose figcaption{font-size:13.5px;color:var(--text-soft);margin-top:-8px;margin-bottom:16px;}
+.prose table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px;}
+.prose th,.prose td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);}
+.prose th{font-weight:600;color:var(--text);}
+.prose td{color:var(--text-soft);}
+.prose blockquote{border-left:2px solid var(--accent);margin:0 0 16px;padding-left:16px;color:var(--text-soft);}
+
+/* People / group cards */
+.person-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;margin:24px 0 40px;}
+.person{font-size:14.5px;}
+.person strong{display:block;font-size:15px;color:var(--text);margin-bottom:2px;}
+.person span{display:block;color:var(--text-soft);}
+.person a{color:var(--accent);text-decoration:none;font-size:13.5px;}
+
+.group-block{margin-bottom:36px;padding-bottom:32px;border-bottom:1px solid var(--line);}
+.group-block:last-child{border-bottom:none;}
+.group-block .members{font-size:14.5px;color:var(--text-soft);margin-top:10px;}
+
+/* Meeting archive list */
+.meeting{padding:22px 0;border-bottom:1px solid var(--line);}
+.meeting h3{font-size:17px;margin-bottom:6px;}
+.meeting .meta{font-size:13.5px;color:var(--accent);margin-bottom:8px;}
+.meeting p{font-size:15px;color:var(--text-soft);margin:0;}
+
+.note-box{background:var(--bg-warm);border:1px solid var(--line);padding:16px 20px;border-radius:2px;font-size:14px;color:var(--text-soft);margin:20px 0;}
 
 /* FOOTER */
 footer{background:var(--nav);color:var(--footer-text);padding:52px 0 34px;}
